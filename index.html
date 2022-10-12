@@ -379,6 +379,11 @@
             </li>
           </ul>
         </div>
+        <form>
+          <p class="call">Підпишіться на розсилку</p>
+          <input type="text" />
+          <button class="sign-button" type="submit">Підписатися</button>
+        </form>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
@@ -388,6 +393,37 @@
             <use href="./images/symbol-defs.svg#icon-close"></use>
           </svg>
         </button>
+        <form class="form">
+          <p class="form-title">Залиште свої дані, ми вам передзвонимо</p>
+          <div class="form-field">
+            <label for="name" class="form-label">Ім'я</label>
+            <input class="form-input" type="text" name="name" id="name" />
+          </div>
+          <div class="form-field">
+            <label for="tel" class="form-label">Телефон</label>
+            <input class="form-input" type="tel" name="telefone" id="tel" />
+          </div>
+          <div class="form-field">
+            <label for="email" class="form-label">Пошта</label>
+            <input class="form-input" type="email" name="email" id="email" />
+          </div>
+          <div class="form-field">
+            <label for="comment" class="form-label">Коментар</label>
+            <textarea
+              class="form-input"
+              name="comment"
+              id="comment"
+              rows="6"
+              placeholder="Введіть текст"
+            ></textarea>
+          </div>
+          <button class="modal-send-button" type="submit">Відправити</button>
+
+          <input type="checkbox" name="agree" id="agree" />
+          <label for="agree"
+            >Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a>
+          </label>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>

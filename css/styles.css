@@ -20,9 +20,10 @@
   --modal-backdrop-color: rgba(0, 0, 0, 0.2);
   --modal-btn-border-color: rgba(0, 0, 0, 0.1);
   --work-item-text-bg: rgba(47, 48, 58, 0.8);
+  --input-border: rgba(33, 33, 33, 0.2);
+  --input-placeholder: rgba(117, 117, 117, 0.5);
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --duration: 250ms;
-  
 }
 
 body {
@@ -108,7 +109,6 @@ img {
   line-height: 1.19;
   color: var(--accent-color);
   text-decoration: none;
-  
 }
 
 .logo-dark {
@@ -126,7 +126,7 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-text-color);
-    
+
   transition: color var(--duration) var(--timing-function);
 }
 
@@ -193,7 +193,7 @@ img {
   width: 696px;
   margin: 0 auto 30px auto;
   text-transform: uppercase;
-  
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -215,9 +215,9 @@ img {
   line-height: 1.88;
   letter-spacing: 0.06em;
   color: var(--light-text-color);
-  
+
   cursor: pointer;
-    
+
   transition: background-color var(--duration) var(--timing-function);
 }
 
@@ -335,7 +335,7 @@ img {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-   
+
   color: var(--light-text-color);
   background-color: var(--work-item-text-bg);
 }
@@ -406,7 +406,7 @@ img {
   fill: var(--icon-color);
 
   transition: background-color var(--duration) var(--timing-function),
-  fill var(--duration) var(--timing-function);
+    fill var(--duration) var(--timing-function);
 }
 
 .soc-link:hover,
@@ -435,11 +435,11 @@ img {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
-  
+
   fill: var(--icon-color);
 
   transition: fill var(--duration) var(--timing-function),
-  border var(--duration) var(--timing-function);
+    border var(--duration) var(--timing-function);
 }
 
 .clients-link:hover,
@@ -447,8 +447,6 @@ img {
   border: 1px solid var(--accent-color);
   fill: var(--accent-color);
 }
-
-
 
 /* -----------------FOOTER-------------------- */
 
@@ -534,7 +532,29 @@ img {
   fill: var(--light-text-color);
 }
 
+.sign-button {
+  padding: 10px 28px;
+  font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+   /* gap: 12px; */
+  
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+    letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 4px;
+    color: var(--light-text-color);
+}
+
 /* ========================MODAL======================= */
+
+textarea {
+  resize: none;
+}
 
 .backdrop {
   position: fixed;
@@ -548,7 +568,7 @@ img {
   background: var(--modal-backdrop-color);
 
   transition: opacity var(--duration) var(--timing-function),
-   visibility var(--duration) var(--timing-function); 
+    visibility var(--duration) var(--timing-function);
 }
 
 .backdrop.is-hidden {
@@ -568,9 +588,12 @@ img {
 
   width: 528px;
   height: 581px;
+
+  padding: 40px;
   background-color: var(--light-background-color);
   border-radius: 4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--duration) var(--timing-function);
@@ -593,12 +616,74 @@ img {
   background-color: var(--light-background-color);
   cursor: pointer;
 
-  transition: background-color var(--duration) var(--timing-function);
-  }
+  transition: fill var(--duration) var(--timing-function);
+}
 
 .modal-close-button:hover,
 .modal-close-button:focus {
-  background-color: var(--modal-btn-border-color);
+  fill: var(--accent-color);
+}
+
+.form-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--second-text-color);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: var(--main-text-color);
+}
+
+.form-input {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+}
+
+.form-input::placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--input-placeholder);
+}
+
+.modal-send-button {
+  padding: 10px 52px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+
+  /* display: flex;
+    align-items: center;
+    text-align: center; */
+  letter-spacing: 0.06em;
+
+  color: var(--light-text-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 4px;
 }
 
 /* ======================PORTFOLIO===================== */
@@ -624,16 +709,15 @@ img {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
-    
+
   color: var(--second-text-color);
   background-color: var(--semi-light-background-color);
   cursor: pointer;
-  
-  transition: 
-  color var(--duration) var(--timing-function),
-  background-color var(--duration) var(--timing-function),
-  box-shadow var(--duration) var(--timing-function);
-} 
+
+  transition: color var(--duration) var(--timing-function),
+    background-color var(--duration) var(--timing-function),
+    box-shadow var(--duration) var(--timing-function);
+}
 
 .button:hover,
 .button:focus {
@@ -656,9 +740,8 @@ img {
 .project-card {
   position: relative;
   display: block;
-  
+
   transition: box-shadow var(--duration) var(--timing-function);
-  
 }
 
 .project-card:hover,
@@ -678,12 +761,12 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   display: flex;
   padding-left: 24px;
   padding-right: 24px;
   align-items: center;
-  
+
   background-color: var(--overlay-color);
 
   transform: translateY(100%);
