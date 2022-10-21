@@ -102,7 +102,7 @@ img {
 }
 
 .logo {
-  margin-right: 93px;
+  
   font-family: var(--logo-font);
   font-weight: 700;
   font-size: 26px;
@@ -113,6 +113,7 @@ img {
 
 .logo-dark {
   color: var(--logo-text-color);
+  margin-right: 93px;
 }
 
 .navigation {
@@ -140,6 +141,7 @@ img {
   position: absolute;
   left: 0;
   bottom: 0;
+  margin-bottom: -1px;
 
   display: block;
   width: 100%;
@@ -509,6 +511,10 @@ img {
   margin-right: 70px;
 }
 
+.soc-networks {
+  margin-right: 93px;
+}
+
 .footer-soc-link {
   display: flex;
   width: 100%;
@@ -532,22 +538,60 @@ img {
   fill: var(--light-text-color);
 }
 
+.footer-sign-form {
+  display: flex;
+}
+
+.footer-sign {
+  width: 358px;
+  height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  margin-right: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+  border-radius: 4px;
+
+  font-size: 16px;
+  line-height: 1.25;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+
+  color: var(--semi-light-text-color);
+  background-color: inherit;
+}
+
 .sign-button {
-  padding: 10px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  width: 200px;
+  height: 50px;
+  padding: 0;
   font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-   /* gap: 12px; */
-  
-    /* display: flex;
-    align-items: center;
-    text-align: center; */
-    letter-spacing: 0.06em;
+  font-size: 16px;
+  line-height: 1.88;
+
+  letter-spacing: 0.06em;
   background-color: var(--accent-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border: none;
-    border-radius: 4px;
-    color: var(--light-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 4px;
+  color: var(--light-text-color);
+  cursor: pointer;
+
+  transition: background-color var(--duration) var(--timing-function);
+}
+
+.sign-button:hover,
+.sign-button:focus,
+.sign-button:active {
+  background-color: var(--btn-accent-color);
 }
 
 /* ========================MODAL======================= */
@@ -641,6 +685,18 @@ textarea {
   margin-bottom: 10px;
 }
 
+.comment {
+  margin-bottom: 20px;
+}
+
+.comment textarea {
+  height: 120px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .form-label {
   margin-bottom: 4px;
 
@@ -651,14 +707,38 @@ textarea {
   color: var(--main-text-color);
 }
 
+.input-wrap {
+  position: relative;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  transition: fill var(--duration) var(--timing-function);
+}
+
 .form-input {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 42px;
   margin: 0;
   border: 1px solid var(--input-border);
   border-radius: 4px;
+
+  transition: border var(--duration) var(--timing-function);
+}
+
+.form-input:focus {
+  border: 1px solid var(--accent-color);
+  outline: transparent;
+}
+
+.form-input:focus + .form-icon {
+  fill: var(--accent-color);
 }
 
 .form-input::placeholder {
@@ -668,15 +748,46 @@ textarea {
   color: var(--input-placeholder);
 }
 
+.checkbox-agreement {
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  margin-bottom: 30px;
+}
+
+.agreement {
+  color: var(--accent-color);
+}
+
+.checkbox + span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 7px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--second-text-color);
+  border-radius: 2px;
+  fill: transparent;
+  transition: background-color var(--duration) var(--timing-function),
+    fill var(--duration) var(--timing-function), border-color var(--duration) var(--timing-function);
+}
+
+.checkbox:checked + span {
+  background-color: var(--accent-color);
+  fill: var(--light-text-color);
+  border-color: transparent;
+}
+
 .modal-send-button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   padding: 10px 52px;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-
-  /* display: flex;
-    align-items: center;
-    text-align: center; */
   letter-spacing: 0.06em;
 
   color: var(--light-text-color);
@@ -684,6 +795,15 @@ textarea {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color var(--duration) var(--timing-function);
+}
+
+.modal-send-button:hover,
+.modal-send-button:focus,
+.modal-send-button:active {
+  background-color: var(--btn-accent-color);
 }
 
 /* ======================PORTFOLIO===================== */
